@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: rgb(9, 97, 105);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+
+.chartsBx{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px;
+}
+
+.chartsBx .chart{
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 7px 25px rgba(227, 16, 16, 0.08);
+  border-radius: 20px;
+  border: 1px solid var(--blue);
+}
+
+
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">Key words</div>
+                        <div class="cardName"></div>
+                    </div>
+
+                    <div class="iconBx">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">Climate change</div>
+                        <div class="cardName"></div>
+                    </div>
+
+                    <div class="iconBx">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">Impacts</div>
+                        <div class="cardName"></div>
+                    </div>
+
+                    <div class="iconBx">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">Causes</div>
+                        <div class="cardName"></div>
+                    </div>
+
+                    <div class="iconBx">
+                    </div>
+                </div>
+            </div>
+
+            <div class="chartsBx">
+                <div class="chart"> <canvas id="chart-1"></canvas> </div>
+                <div class="chart"> <canvas id="chart-2"></canvas> </div>
+                <div class="chart"> <canvas id="chart-3"></canvas> </div>
+                <div class="chart"> <canvas id="chart-4"></canvas> </div>
+                <div class="chart"> <canvas id="chart-5"></canvas> </div>
+                <div class="chart"> <canvas id="chart-6"></canvas> </div>
+
+
+
+
+
+
+            </div>
+
+         
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script>
+        const ctx1 = document.getElementById("chart-1").getContext("2d");
+const myChart = new Chart(ctx1, {
+  type: "polarArea",
+  data: {
+    labels: ["industry", "transportaion", "Electricity", "Commercial and Residential", "Agriculture"],
+    datasets: [
+      {
+        label: "climate change causes (percentage)",
+        data: [21, 26, 30, 12, 9],
+        backgroundColor: [
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 99, 132, 1)",
+          "rgba(255, 206, 86, 1)",
+          "blue",
+          "green",
+
+        ],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+
+
+const ctx2 = document.getElementById("chart-2").getContext("2d");
+const myChart2 = new Chart(ctx2, {
+  type: "bar",
+  data: {
+    labels: ["Egypt", "Qatar", "Tunisia", "UAE", "Kuwait", "Libya", "Oman", "Morocco", "Iran", "Yemen", "Algeria", "Saudi Arabia"],
+    datasets: [
+      {
+        label: "A comparison of percentage impact of sea level rise on GDP (the gross domestic product) in the Arab World (percentage)",
+        data: [16, 10, 8, 4, 4, 3, 2, 1.5, 1, 0.5, 0.5, 0.1  ],
+        backgroundColor: [
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 99, 132, 1)",
+          "rgba(255, 206, 86, 1)",
+        ],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+
+const ctx3 = document.getElementById("chart-3").getContext("2d");
+const myChart3 = new Chart(ctx3, {
+  type: "polarArea",
+  data: {
+    labels: ["Carbon Dioxide", "Methane", "Other gases", "Nitrous oxide", "Fluorinated gases"],
+    datasets: [
+      {
+        label: "climate impacts (percentage)",
+        data: [64.3, 17.0, 11.9, 6, 0.8  ],
+        backgroundColor: [
+          "rgba(12, 240, 229)",
+          "rgba(157, 15, 150)",
+          "rgba(12, 114, 54)",
+          "rgba(212, 233, 13)",
+          "rgba(233, 13, 208)",
+
+        ],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+
+const ctx4 = document.getElementById("chart-4").getContext("2d");
+const myChart4 = new Chart(ctx4, {
+  type: "bar",
+  data: {
+    labels: ["Egypt", "Qatar", "Tunisia", "UAE", "Kuwait", "Libya", "Oman", "Morocco", "Iran", "Yemen", "Algeria", "Saudi Arabia"],
+    datasets: [
+      {
+        label: "climate change causes (percentage)",
+        data: [35, 0, 4, 0, 0, 0, 5, 1,1, 1, 2, 5, 0 ],
+        backgroundColor: [
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 99, 132, 1)",
+          "rgba(255, 206, 86, 1)",
+          "black",
+          "blue",
+          "green",
+
+        ],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+const ctx5 = document.getElementById("chart-5").getContext("2d");
+const myChart5 = new Chart(ctx5, {
+  type: "doughnut",
+  data: {
+    labels: ["Advance renewables and energy storage","Improve energy efficiency", "Replace fossil based fuels", "Restore forests", "Repurpose existing infrastructure"],
+    datasets: [
+      {
+        label: "How do we keep global warming to 1.5 degree celisus ",
+        data: [0.1,0.1,0.1,0.1,0.1 ],
+        backgroundColor: [
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 99, 132, 1)",
+          "rgba(255, 206, 86, 1)",
+
+
+        ],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+
+const ctx6 = document.getElementById("chart-6").getContext("2d");
+const myChart6 = new Chart(ctx6, {
+  type: "bar",
+  data: {
+    labels: ["If countries do not act","If countries follow previous pledges", "If countries stick to Paris agreement"],
+    datasets: [
+      {
+        label: "Average global warming by 2100 (celisus)",
+        data: [4.5, 3.5, 2.75 ],
+        backgroundColor: [
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 99, 132, 1)",
+          "rgba(255, 206, 86, 1)",
+
+
+        ],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
+
+
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

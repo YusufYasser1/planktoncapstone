@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(10, 61, 80);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  width: 300px;
+  height: 460px;
+  margin: 25px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}
+
+/* Card Header*/
+.card-header {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img {
+  min-width: 100%;
+  width: auto;
+  height: 100%;
+}
+
+/* Card Body */
+.card-body {
+  height: 170px;
+  padding: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.card-local {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.card-titulo {
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.card-texto {
+  font-size: 16px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+/* Card Footer */
+.card-footer {
+  margin-top: 10px;
+  text-align: center;
+  background-color: #000;
+}
+
+.card-footer a {
+  color: #fff;
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+/* Cores Cards */
+.card-1 .card-footer {
+  background-color: #2740d1;
+}
+
+.card-1 .card-local {
+  color: #2740d1;
+}
+
+.card-2 .card-footer {
+  background-color: #d12761;
+}
+
+.card-2 .card-local {
+  color: #d12761;
+}
+
+.card-3 .card-footer {
+  background-color: #00c702;
+}
+
+.card-3 .card-local {
+  color: #00c702;
+}
+
+/* Animação Hover */
+.card:hover {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Card 1 -->
+      <div class="card card-1">
+        <!-- card-header -->
+        <div class="card-header">
+          <img src="https://c0.wallpaperflare.com/preview/799/151/753/clouds-electricity-emission-factory.jpg" class="card-img" />
+        </div>
+        <!-- card-header -->
+
+        <!-- card-body -->
+        <div class="card-body">
+          <h3 class="card-local">CHAPTER 01</h3>
+          <h2 class="card-titulo"></h2>
+          <p class="card-texto">
+Presenting and Justify a Problem and Solution Requirments
+
+          </p>
+        </div>
+        <!-- card-body -->
+
+        <!-- card-footer -->
+        <div class="card-footer">
+          <a href="#">Read more</a>
+        </div>
+        <!-- card-footer -->
+      </div>
+      <!-- Card 1 -->
+
+      <!-- Card 2 -->
+      <div class="card card-2">
+        <!-- card-header -->
+        <div class="card-header">
+          <img src="https://c0.wallpaperflare.com/preview/239/96/1006/industrial-industry-automation-automatic.jpg" class="card-img" />
+        </div>
+        <!-- card-header -->
+
+        <!-- card-body -->
+        <div class="card-body">
+          <h3 class="card-local">CHAPTER 02</h3>
+          <h2 class="card-titulo"></h2>
+          <p class="card-texto">
+Generating and Defending a Solution
+          </p>
+        </div>
+        <!-- card-body -->
+        <!-- card-footer -->
+        <div class="card-footer">
+          <a href="#">Read more</a>
+        </div>
+        <!-- card-footer -->
+      </div>
+      <!-- Card 2 -->
+
+      <!-- Card 3 -->
+      <div class="card card-3">
+        <!-- card-header -->
+        <div class="card-header">
+          <img src="https://c0.wallpaperflare.com/preview/524/860/912/screen-code-coding-programming.jpg" class="card-img" />
+        </div>
+        <!-- card-header -->
+
+        <!-- card-body -->
+        <div class="card-body">
+          <h3 class="card-local">CHAPTER 03</h3>
+          <h2 class="card-titulo"></h2>
+          <p class="card-texto">
+Constructing and Testing a prototype
+          </p>
+        </div>
+        <!-- card-body -->
+        
+
+
+        <!-- card-footer -->
+        <div class="card-footer">
+          <a href="#">Read more</a>
+        </div>
+        <!-- card-footer -->
+      </div>
+      <!-- Card 3 -->
+      
+           <!-- Card 4 -->
+           <div class="card card-4">
+            <!-- card-header -->
+            <div class="card-header">
+              <img src="https://c0.wallpaperflare.com/preview/241/384/859/analysis-analytics-analyzing-annual.jpg" class="card-img" />
+            </div>
+            <!-- card-header -->
+    
+            <!-- card-body -->
+            <div class="card-body">
+              <h3 class="card-local">CHAPTER 04</h3>
+              <h2 class="card-titulo"></h2>
+              <p class="card-texto">
+Evaluation, Reflection, Recommendations
+              </p>
+            </div>
+            <!-- card-body -->
+    
+            <!-- card-footer -->
+            <div class="card-footer">
+              <a href="#">Read more</a>
+            </div>
+            <!-- card-footer -->
+          </div>
+          <!-- Card 1 -->
+    
+      
+      <!-- Link Tutorial: https://youtu.be/UEm65E2_Y2Q -->
+    </div>
+  </body>
+</html>
